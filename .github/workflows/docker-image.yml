@@ -19,8 +19,8 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v1
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          username: riyatout
+          password: riya@12345
 
       - name: Build and push Docker image
         run: |
@@ -29,5 +29,5 @@ jobs:
           docker buildx build --platform linux/amd64,linux/arm64 -t riyatout/github_action:latest .
           docker push riyatout/github_action:latest
         env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+          DOCKER_USERNAME: riyatout
+          DOCKER_PASSWORD: riya@12345

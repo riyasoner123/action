@@ -23,11 +23,8 @@ jobs:
           password: riya@12345
 
       - name: Build and push Docker image
-        run: |
-          docker buildx create --use
-          docker buildx inspect --bootstrap
-          docker buildx build --platform linux/amd64,linux/arm64 -t riyatout/github_action:latest .
-          docker push riyatout/github_action:latest
+        run: 
+          docker buildx build --platform linux/amd64,linux/arm64 -t riyatout/github_action:latest --push .
         env:
           DOCKER_USERNAME: riyatout
           DOCKER_PASSWORD: riya@12345
